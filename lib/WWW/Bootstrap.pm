@@ -7,7 +7,7 @@ use Path::Extended;
 use HTTP::Tiny;
 use Archive::Zip;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 BEGIN { system('which npm >/dev/null 2>&1 ') && warn "could not find npm, please install node.js"; }
 
@@ -115,7 +115,7 @@ sub copy_to {
     for my $dir ( qw/css fonts js/ ) {
         my $distdir = dir($self->workdir,"bootstrap-master/dist",$dir);
         for my $file ($distdir->children) {
-            next unless $file->basename eq 'npm.js';
+            next if $file->basename eq 'npm.js';
             $file->copy_to(dir($target,$dir,$file->basename));
         }
     }

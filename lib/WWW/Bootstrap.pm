@@ -7,7 +7,7 @@ use Path::Extended;
 use HTTP::Tiny;
 use Archive::Zip;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 BEGIN { system('which npm >/dev/null 2>&1 ') && warn "could not find npm, please install node.js"; }
 

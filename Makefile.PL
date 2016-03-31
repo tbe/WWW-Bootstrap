@@ -22,6 +22,8 @@ WriteMakefile(
         'Path::Extended'    => 0,
         'HTTP::Tiny'        => 0,
         'Archive::Zip'      => 0,
+        'Moose'             => 0,
+        'namespace::autoclean' => 0,
     },
     CONFIGURE => sub {
         system('which npm >/dev/null 2>&1') and 
